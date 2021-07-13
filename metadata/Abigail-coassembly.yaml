@@ -1,0 +1,4 @@
+[
+ {orientation: "fr", type: "paired-end", interlaced reads: ["/home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/interleaved/Abigail-2021-03-17.fastq","/home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/interleaved/Abigail-2021-04-03.fastq"]
+ }
+]

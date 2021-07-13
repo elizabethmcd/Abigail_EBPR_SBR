@@ -1,0 +1,15 @@
+######################
+# Queue Abigail coassembly with spades
+######################
+
+request_cpus = 16
+request_memory = 900GB
+
+executable = /home/GLBRCORG/emcdaniel/EBPR/Abigail/executables/Abigail_coassembly.sh
+
+
+output = /home/GLBRCORG/emcdaniel/EBPR/Abigail/outs/coassembly.out
+error = /home/GLBRCORG/emcdaniel/EBPR/Abigail/errs/coassembly.err
+log = /home/GLBRCORG/emcdaniel/EBPR/Abigail/logs/coassembly.log
+
+queue

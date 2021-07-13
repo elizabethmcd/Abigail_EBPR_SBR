@@ -1,0 +1,2 @@
+Abigail-2021-03-17	/home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/cleaned_fastqs/Abigail-2021-03-17_S46_L001_R1_001.qced.fastq	/home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/cleaned_fastqs/Abigail-2021-03-17_S46_L001_R2_001.qced.fastq
+Abigail-2021-04-03	/home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/cleaned_fastqs/Abigail-2021-04-03_S47_L001_R1_001.qced.fastq	/home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/cleaned_fastqs/Abigail-2021-04-03_S47_L001_R2_001.qced.fastq
