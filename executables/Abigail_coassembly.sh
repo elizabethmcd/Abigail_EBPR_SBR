@@ -1,7 +1,10 @@
+#! /bin/bash
+
 ######################
 # SPAdes coassembly of Abigail metagenomic reads
 # Elizabeth McDaniel
 ######################
+
 
 # Make sure reads have been filtered previously before assembly - garbage in = garbage out
 outdir=/home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/assemblies/Abigail_coassembly

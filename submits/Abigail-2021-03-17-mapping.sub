@@ -14,4 +14,4 @@ output = /home/GLBRCORG/emcdaniel/EBPR/Abigail/outs/$(Cluster)_$(Process)_mappin
 error = /home/GLBRCORG/emcdaniel/EBPR/Abigail/errs/$(Cluster)_$(Process)_mapping.err
 log = /home/GLBRCORG/emcdaniel/EBPR/Abigail/logs/$(Cluster)_$(Process)_mapping.log
 
-queue r1,r2,out from metadata/mappingCombos.txt
+queue r1,r2,out from metadata/Abigail-2021-03-17-mapping.txt

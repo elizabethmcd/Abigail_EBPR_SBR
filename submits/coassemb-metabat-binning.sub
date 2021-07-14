@@ -5,14 +5,13 @@
 ##################
 
 request_cpus = 4
-request_memory = 5GB
+request_memory = 10GB
 
-executable = /home/GLBRCORG/emcdaniel/EBPR/Abigail/executables/metabat-binning.sh
+executable = /home/GLBRCORG/emcdaniel/EBPR/Abigail/executables/coassemb-metabat-binning.sh
 
-arguments = $(ASSEMB)
 
 output = /home/GLBRCORG/emcdaniel/EBPR/Abigail/outs/$(Cluster)_$(Process)_binning.out
 error = /home/GLBRCORG/emcdaniel/EBPR/Abigail/errs/$(Cluster)_$(Process)_binning.err
 log = /home/GLBRCORG/emcdaniel/EBPR/Abigail/logs/$(Cluster)_$(Process)_binning.log
 
-queue ASSEMB from /home/GLBRCORG/emcdaniel/EBPR/Abigail/metadata/Abigail-assemblies.txt
+queue
