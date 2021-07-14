@@ -109,8 +109,13 @@ plot(acc_tree)
 ampvis2_obj <- phyloseq_to_ampvis2(ps2)
 accumulibacter_OTUs <- amp_subset_taxa(ampvis2_obj, tax_vector=c("Candidatus Accumulibacter"), normalise=TRUE)
 
-amp_heatmap(ampvis2_obj, tax_aggregate = "Genus", group_by="timepoint", tax_show=12, plot_values = FALSE, plot_colorscale = "sqrt", tax_add="Phylum")
+# plots of 16S dynamics over time-series and abundance
+genus_heatmap <- amp_heatmap(ampvis2_obj, tax_aggregate = "Genus", group_by="timepoint", tax_show=12, plot_values = FALSE, plot_colorscale = "sqrt", tax_add="Phylum", plot_legendbreaks=c(0,5,10,20, 30, 40))
 
-amp_boxplot(ampvis2_obj, tax_show = 12, tax_add="Phylum")
+genus_boxplot <- amp_boxplot(ampvis2_obj, tax_show = 12, tax_add="Phylum")
 
-amp_heatmap(accumulibacter_OTUs, tax_aggregate="OTU", tax_show=5, plot_values=FALSE, group_by="timepoint", plot_colorscale = "sqrt", normalise=FALSE) + theme(axis.text.y=element_blank())
+acc_ASVs_heatmap <- amp_heatmap(accumulibacter_OTUs, tax_aggregate="OTU", tax_show=5, plot_values=FALSE, group_by="timepoint", plot_colorscale = "sqrt", normalise=FALSE, plot_legendbreaks=c(0,5,10,15,20,25))+ scale_y_discrete(labels=c("C. Accumulibacter ASV5", "C. Accumulibacter ASV4", "C. Accumulibacter ASV3", "C. Accumulibacter ASV2", "C. Accumulibacter ASV1")) + theme(axis.text.y = element_text(face="italic", size=8))
+
+ggsave("figures/Abigail-genus-heatmap.png", genus_heatmap, width=10, height=5, units=c("in"))
+ggsave("figures/Abigail-genus-boxplot.png", genus_boxplot, width=9, height=4, units=c("in"))
+ggsave("figures/Abigail-Acc-ASVs.png", acc_ASVs_heatmap, width=10, height=5, units=c("in"))

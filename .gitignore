@@ -1,3 +1,7 @@
+.RData
+.Rhistory
+figures/
+.DS_Store
 results/
 data/
 *.Rproj*
