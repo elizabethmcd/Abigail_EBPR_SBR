@@ -1,3 +1,4 @@
+workflows/
 .RData
 .Rhistory
 figures/
@@ -5,3 +6,4 @@ figures/
 results/
 data/
 *.Rproj*
+.Rproj.user
