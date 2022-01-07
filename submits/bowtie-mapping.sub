@@ -1,0 +1,17 @@
+##################
+# bowtie-mapping.sub
+# Submission script for mapping metagenomic reads to concatenated set of bins with bowtie2
+# Elizabeth McDaniel
+##################
+
+request_cpus = 6
+request_memory = 150GB
+
+executable = /home/GLBRCORG/emcdaniel/EBPR/Abigail/executables/bowtie-mapping.sh
+arguments = $(reads)
+
+output = /home/GLBRCORG/emcdaniel/EBPR/Abigail/outs/$(Cluster)_$(Process)_bowtie-mapping.out
+error = /home/GLBRCORG/emcdaniel/EBPR/Abigail/errs/$(Cluster)_$(Process)_bowtie-mapping.err
+log = /home/GLBRCORG/emcdaniel/EBPR/Abigail/logs/$(Cluster)_$(Process)_bowtie-mapping.log
+
+queue reads from metadata/metagenomeList.txt
