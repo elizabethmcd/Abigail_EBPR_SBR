@@ -1,60 +1,60 @@
-2021-03-17-bin.1.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.10.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.14.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.22.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.26.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.3.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.36.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.39.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.52.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.61.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.68.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.95.fa,Abigail-2021-03-17-spRep.sam
-2021-04-03-bin.106.fa,Abigail-2021-03-17-spRep.sam
-2021-04-03-bin.109.fa,Abigail-2021-03-17-spRep.sam
-2021-04-03-bin.52.fa,Abigail-2021-03-17-spRep.sam
-2021-04-03-bin.58.fa,Abigail-2021-03-17-spRep.sam
-2021-04-03-bin.64.fa,Abigail-2021-03-17-spRep.sam
-2021-04-03-bin.65.fa,Abigail-2021-03-17-spRep.sam
-2021-04-03-bin.80.fa,Abigail-2021-03-17-spRep.sam
-2021-04-03-bin.96.fa,Abigail-2021-03-17-spRep.sam
-coassembly-bin.101.fa,Abigail-2021-03-17-spRep.sam
-coassembly-bin.122.fa,Abigail-2021-03-17-spRep.sam
-coassembly-bin.128.fa,Abigail-2021-03-17-spRep.sam
-coassembly-bin.139.fa,Abigail-2021-03-17-spRep.sam
-coassembly-bin.180.fa,Abigail-2021-03-17-spRep.sam
-coassembly-bin.24.fa,Abigail-2021-03-17-spRep.sam
-coassembly-bin.46.fa,Abigail-2021-03-17-spRep.sam
-2021-03-17-bin.1.fa,Abigail-2021-04-03-spRep.sam
-2021-03-17-bin.14.fa,Abigail-2021-04-03-spRep.sam
-2021-03-17-bin.22.fa,Abigail-2021-04-03-spRep.sam
-2021-03-17-bin.3.fa,Abigail-2021-04-03-spRep.sam
-2021-03-17-bin.36.fa,Abigail-2021-04-03-spRep.sam
-2021-03-17-bin.39.fa,Abigail-2021-04-03-spRep.sam
-2021-03-17-bin.52.fa,Abigail-2021-04-03-spRep.sam
-2021-03-17-bin.68.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.104.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.106.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.13.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.14.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.46.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.48.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.52.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.58.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.64.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.65.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.80.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.90.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.91.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.96.fa,Abigail-2021-04-03-spRep.sam
-2021-04-03-bin.98.fa,Abigail-2021-04-03-spRep.sam
-coassembly-bin.101.fa,Abigail-2021-04-03-spRep.sam
-coassembly-bin.113.fa,Abigail-2021-04-03-spRep.sam
-coassembly-bin.122.fa,Abigail-2021-04-03-spRep.sam
-coassembly-bin.128.fa,Abigail-2021-04-03-spRep.sam
-coassembly-bin.180.fa,Abigail-2021-04-03-spRep.sam
-coassembly-bin.24.fa,Abigail-2021-04-03-spRep.sam
-coassembly-bin.46.fa,Abigail-2021-04-03-spRep.sam
-coassembly-bin.60.fa,Abigail-2021-04-03-spRep.sam
-UW_LDO.fa,Abigail-2021-04-03-spRep.sam
-UW_LDO.fa,Abigail-2021-03-17-spRep.sam
+2021-03-17-bin.1.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.10.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.14.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.22.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.26.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.3.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.36.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.39.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.52.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.61.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.68.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.95.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-04-03-bin.106.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-04-03-bin.109.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-04-03-bin.52.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-04-03-bin.58.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-04-03-bin.64.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-04-03-bin.65.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-04-03-bin.80.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-04-03-bin.96.fa	Abigail-2021-03-17-spRep.sorted.bam
+coassembly-bin.101.fa	Abigail-2021-03-17-spRep.sorted.bam
+coassembly-bin.122.fa	Abigail-2021-03-17-spRep.sorted.bam
+coassembly-bin.128.fa	Abigail-2021-03-17-spRep.sorted.bam
+coassembly-bin.139.fa	Abigail-2021-03-17-spRep.sorted.bam
+coassembly-bin.180.fa	Abigail-2021-03-17-spRep.sorted.bam
+coassembly-bin.24.fa	Abigail-2021-03-17-spRep.sorted.bam
+coassembly-bin.46.fa	Abigail-2021-03-17-spRep.sorted.bam
+2021-03-17-bin.1.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-03-17-bin.14.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-03-17-bin.22.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-03-17-bin.3.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-03-17-bin.36.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-03-17-bin.39.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-03-17-bin.52.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-03-17-bin.68.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.104.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.106.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.13.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.14.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.46.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.48.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.52.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.58.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.64.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.65.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.80.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.90.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.91.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.96.fa	Abigail-2021-04-03-spRep.sorted.bam
+2021-04-03-bin.98.fa	Abigail-2021-04-03-spRep.sorted.bam
+coassembly-bin.101.fa	Abigail-2021-04-03-spRep.sorted.bam
+coassembly-bin.113.fa	Abigail-2021-04-03-spRep.sorted.bam
+coassembly-bin.122.fa	Abigail-2021-04-03-spRep.sorted.bam
+coassembly-bin.128.fa	Abigail-2021-04-03-spRep.sorted.bam
+coassembly-bin.180.fa	Abigail-2021-04-03-spRep.sorted.bam
+coassembly-bin.24.fa	Abigail-2021-04-03-spRep.sorted.bam
+coassembly-bin.46.fa	Abigail-2021-04-03-spRep.sorted.bam
+coassembly-bin.60.fa	Abigail-2021-04-03-spRep.sorted.bam
+UW_LDO.fa	Abigail-2021-03-17-spRep.sorted.bam
+UW_LDO.fa	Abigail-2021-04-03-spRep.sorted.bam
