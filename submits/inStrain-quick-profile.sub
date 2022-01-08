@@ -1,0 +1,15 @@
+##############################
+# inStrain quick profile Queues
+##############################
+
+executable = /home/GLBRCORG/emcdaniel/EBPR/Abigail/executables/inStrain-quick-profile.sh
+
+request_cpus = 6
+request_memory = 150GB
+arguments = $(sam)
+
+output = /home/GLBRCORG/emcdaniel/EBPR/Abigail/outs/$(Cluster)_$(Process)_quick_profile.out
+error = /home/GLBRCORG/emcdaniel/EBPR/Abigail/errs/$(Cluster)_$(Process)_quick_profile.err
+log = /home/GLBRCORG/emcdaniel/EBPR/Abigail/logs/$(Cluster)_$(Process)_quick_profile.log
+
+queue sam from metadata/Abigail-sorted-bams.txt

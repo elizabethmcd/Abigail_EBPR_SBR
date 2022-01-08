@@ -14,7 +14,7 @@ samplename=$(basename $reads .fastq)
 cd /home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/mappingResults
 
 # mapping command
-/opt/bifxapps/bowtie2-2.3.5.1/bowtie2 --threads 4 -x /home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/binningResults/relative_abundance/bt2/abigail-new-bins.fasta -q $reads > $samplename-spRep.sam
+/opt/bifxapps/bowtie2-2.3.5.1/bowtie2 --threads 4 -x /home/GLBRCORG/emcdaniel/EBPR/Abigail/metagenomes/binningResults/relative_abundance/bt2/abigail-new-bins.fasta --interleaved $reads > $samplename-spRep.sam
 
 
 # BAM, sort, index
