@@ -18,7 +18,18 @@ ab_genome_info_filtered$sample <- gsub(".IS_genome_info.tsv", "", ab_genome_info
 
 # merge with metadata info
 
-left_join(ab_genome_info_filtered, abigail_metadata) %>% 
+div_plot <- left_join(ab_genome_info_filtered, abigail_metadata) %>% 
   separate(taxonomy, into=c("taxonomy", "phylum"), sep="p__") %>%
   mutate(phylum = gsub(";.*", "", phylum)) %>%
-  ggplot(aes(x=r2_mean, y=nucl_diversity)) + geom_point(aes(color=phylum), size=2.5) + facet_wrap(~ sample) + theme_bw()
+  ggplot(aes(x=r2_mean, y=nucl_diversity)) + geom_point(aes(color=phylum), size=2.5) + facet_wrap(~ sample) + theme_bw() + ylab("Nucleotide Diversity π") + xlab(expression(r ^2)) + labs(color=c("Phylum")) + theme(legend.position = c("bottom"))
+
+div_plot
+
+# Grid of 16S data, relative abundance, and diversity 
+bins_grid <- plot_grid(bar_plot, div_plot, ncol = 2, align="h", axis="b", labels=c("B", "C"))
+bins_grid
+
+abigail_grid <- plot_grid(genus_heatmap, bins_grid, ncol=1, labels=c("A"), rel_heights=c(1,2))
+abigail_grid
+
+# combine with qPCR data and Accumulibacter ASVs

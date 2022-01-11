@@ -31,9 +31,13 @@ bin_table$avg <- (bin_table$`A-2021-03-17` + bin_table$`A-2021-04-03`) / 2
 
 write.csv(bin_table, "results/binning/Abigail-bins-table.csv", quote=FALSE, row.names = FALSE)
 
-bar_plot <- abund_metadata %>% ggplot(aes(x=factor(date), y=abundance, fill=group)) + geom_bar(stat="identity", color="black") + scale_fill_brewer(palette = "Set3") + scale_y_continuous(expand=c(0,0), breaks=seq(0, 45, 5)) + ylab("Relative Abundance") + xlab("Sample Date") + theme_bw()
+bar_plot <- abund_metadata %>% ggplot(aes(x=factor(date), y=abundance, fill=group)) + geom_bar(stat="identity", color="black") + scale_fill_brewer(palette = "Set3") + scale_y_continuous(expand=c(0,0), breaks=seq(0, 50, 5)) + ylab("Relative Abundance") + xlab("Sample Date") + theme_bw() + labs(fill=c("Lineage")) + theme(legend.position = c("bottom"))
+
+bar_plot
 
 avg_plot <- abund_avg %>% ggplot(aes(x=reorder(bin, -avg), y=avg, fill=group)) + geom_bar(stat="identity") + scale_fill_brewer(palette="Set3") + ylab("Average Relative Abundance") + xlab("Genome") + scale_y_continuous(expand=c(0,0), breaks=seq(0, 12, 2)) + theme_classic() + theme(axis.text.x=element_blank())
 
 ggsave("figures/abigail-bins-sample-barplot.png", bar_plot, width=7, height=9, units=c("in"))
 ggsave("figures/abigail-bins-avg-rel-abund.png", avg_plot, width=11, height=5, units=c("in"))
+
+genus_heatmap / acc_ASVs_heatmap
