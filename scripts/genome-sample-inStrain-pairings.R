@@ -25,3 +25,5 @@ abigail_pairings <- abigail_profiles_info %>%
   mutate(sample = paste(sample, "-spRep.sorted.bam", sep=""))
 
 write_tsv(abigail_pairings, "metadata/Abigail-inStrain-queues.txt", col_names = FALSE)
+
+write.csv(ab_genome_info_filtered, "results/inStrain/Abigail-inStrain-diversity-table.csv", quote=FALSE, row.names = FALSE)
