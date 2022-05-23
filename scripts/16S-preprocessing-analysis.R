@@ -110,7 +110,9 @@ ampvis2_obj <- phyloseq_to_ampvis2(ps2)
 accumulibacter_OTUs <- amp_subset_taxa(ampvis2_obj, tax_vector=c("Candidatus Accumulibacter"), normalise=TRUE)
 
 # plots of 16S dynamics over time-series and abundance
-genus_heatmap <- amp_heatmap(ampvis2_obj, tax_aggregate = "Genus", group_by="timepoint", tax_show=12, plot_values = FALSE, plot_colorscale = "sqrt", tax_add="Phylum", plot_legendbreaks=c(0,5,10,20, 30, 40)) + theme(axis.text.y = element_text(face="italic", size=6), axis.text.x=element_text(size=6)) + scale_x_discrete(position="top")
+genus_heatmap <- amp_heatmap(ampvis2_obj, tax_aggregate = "Genus", group_by="operation_day", tax_show=12, plot_values = FALSE, plot_colorscale = "sqrt", tax_add="Phylum", plot_legendbreaks=c(0,5,10,20, 30, 40)) + theme(axis.text.y=element_text(face=c("italic"), size=5), legend.position=c("right"), axis.text.x=element_text(angle=0), axis.ticks.x = element_blank()) + scale_x_discrete(position="bottom")
+
+genus_heatmap
 
 genus_boxplot <- amp_boxplot(ampvis2_obj, tax_show = 12, tax_add="Phylum")
 
@@ -118,6 +120,19 @@ acc_ASVs_heatmap <- amp_heatmap(accumulibacter_OTUs, tax_aggregate="OTU", tax_sh
 
 genus_heatmap
 acc_ASVs_heatmap
+
+# shannon diversity 
+shannon_plot <- plot_richness(ps2, x="operation_day", measure="Shannon") + scale_x_continuous(expand=c(0,0), limits=c(0,62), breaks=seq(0,62,2)) + ylab('Shannon\n Alpha Diversity\n') + theme_bw() + theme(axis.title.x=element_text(face="bold", size=7), axis.title.y=element_text(face="bold", size=7), strip.background=element_blank(), strip.text.x=element_blank(), plot.title=element_text(size=12, face="bold"), axis.text.x=element_text(size=6), axis.text.y=element_text(size=6))
+
+shannon_plot
+
+plot_richness(ps2, x="sample", measure="Simpson") + ylab('Shannon\n Alpha Diversity\n') + theme_bw() + theme(axis.title.x=element_text(face="bold", size=7), axis.title.y=element_text(face="bold", size=7), strip.background=element_blank(), strip.text.x=element_blank(), plot.title=element_text(size=12, face="bold"), axis.text.x=element_text(size=6), axis.text.y=element_text(size=6))
+
+plot_richness(ps2, x="sample", measure="Fisher") + ylab('Shannon\n Alpha Diversity\n') + theme_bw() + theme(axis.title.x=element_text(face="bold", size=7), axis.title.y=element_text(face="bold", size=7), strip.background=element_blank(), strip.text.x=element_blank(), plot.title=element_text(size=12, face="bold"), axis.text.x=element_text(size=6), axis.text.y=element_text(size=6))
+
+amplicon_grid <- plot_grid(genus_heatmap, shannon_plot, ncol = 1, align=c("v"), axis = "l", labels=c("A","B"))
+
+amplicon_grid
 
 ggsave("figures/Abigail-genus-heatmap.png", genus_heatmap, width=10, height=5, units=c("in"))
 ggsave("figures/Abigail-genus-boxplot.png", genus_boxplot, width=9, height=4, units=c("in"))

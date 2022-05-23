@@ -1,4 +1,7 @@
 library(tidyverse)
+library(patchwork)
+library(cowplot)
+library(ggpubr)
 
 # Abigail MAGs inStrain genome info - diversity within samples in the time-series 
 
@@ -23,13 +26,35 @@ div_plot <- left_join(ab_genome_info_filtered, abigail_metadata) %>%
   mutate(phylum = gsub(";.*", "", phylum)) %>%
   ggplot(aes(x=r2_mean, y=nucl_diversity)) + geom_point(aes(color=phylum), size=2.5) + facet_wrap(~ sample) + theme_bw() + ylab("Nucleotide Diversity π") + xlab(expression(r ^2)) + labs(color=c("Phylum")) + theme(legend.position = c("bottom"))
 
-div_plot
+
+# merge with metadata info for group name 
+colnames(metadata)[1] <- c("genome")
+div_metadata <- left_join(ab_genome_info_filtered, metadata) %>% 
+  select(genome, sample, nucl_diversity, r2_mean, group)
+
+# plot to match colors of the bar plot of relative abundance 
+facet_labels <- c("Operation Day 43", "Operation Day 60")
+names(facet_labels) <- c("Abigail-2021-03-17", "Abigail-2021-04-03")
+
+div_plot <- div_metadata %>% 
+  ggplot(aes(x=r2_mean, y=nucl_diversity)) +
+  geom_point(aes(color=group), size=2.5) + 
+  scale_color_brewer(palette = "Set3") +
+  facet_wrap(~ sample, labeller = labeller(sample = facet_labels)) +
+  theme_bw() +
+  ylab("Nucleotide Diversity π") +
+  xlab(expression(r ^2)) +
+  labs(color=c("Lineage"))
 
 # Grid of 16S data, relative abundance, and diversity 
-bins_grid <- plot_grid(bar_plot, div_plot, ncol = 2, align="h", axis="b", labels=c("B", "C"))
+bins_grid <- plot_grid(bar_plot, div_plot, ncol = 2, align="h", axis="b", labels=c("A", "B"))
 bins_grid
 
-abigail_grid <- plot_grid(genus_heatmap, bins_grid, ncol=1, labels=c("A"), rel_heights=c(1,2))
+abigail_bins_grid <- ggarrange(bar_plot, div_plot, labels = c("A", "B"), common.legend=TRUE, legend = "bottom")
+
+abigail_grid <- plot_grid(amplicon_grid, bins_grid, ncol=1)
 abigail_grid
+
+ggsave("figures/abigail-bins-div-grid.png", abigail_bins_grid, width=20, height=15, units=c("cm"))
 
 # combine with qPCR data and Accumulibacter ASVs

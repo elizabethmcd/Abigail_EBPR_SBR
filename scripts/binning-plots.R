@@ -31,7 +31,16 @@ bin_table$avg <- (bin_table$`A-2021-03-17` + bin_table$`A-2021-04-03`) / 2
 
 write.csv(bin_table, "results/binning/Abigail-bins-table.csv", quote=FALSE, row.names = FALSE)
 
-bar_plot <- abund_metadata %>% ggplot(aes(x=factor(date), y=abundance, fill=group)) + geom_bar(stat="identity", color="black") + scale_fill_brewer(palette = "Set3") + scale_y_continuous(expand=c(0,0), breaks=seq(0, 50, 5)) + ylab("Relative Abundance") + xlab("Sample Date") + theme_bw() + labs(fill=c("Lineage")) + theme(legend.position = c("bottom"))
+bar_plot <- abund_metadata %>% 
+  ggplot(aes(x=factor(date), y=abundance, fill=group)) + 
+  geom_bar(stat="identity", color="black") + 
+  scale_fill_brewer(palette = "Set3") + 
+  scale_y_continuous(expand=c(0,0), breaks=seq(0, 50, 5)) + 
+  ylab("Relative Abundance") + 
+  xlab("Operation Day") + theme_bw() + 
+  labs(fill=c("Lineage")) + 
+  theme(legend.position = c("bottom")) +
+  scale_x_discrete(labels=c("A-2021-03-17" = "43", "A-2021-04-03" = "60"))
 
 bar_plot
 
