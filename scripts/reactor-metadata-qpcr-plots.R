@@ -32,9 +32,10 @@ qpcr_plot <- qpcr_data %>%
   scale_x_discrete() +
   xlab("Operation Day") +
   ylab("Copies/ng DNA") +
-  scale_fill_manual(values=c("navyblue", "orange", "orchid")) +
+  scale_fill_brewer() +
   theme_classic() +
   theme(legend.position=c("top"))
+qpcr_plot
 
 # grid
 reactor_grid <- plot_grid(p_plot, qpcr_plot, ncol=2, labels=c("A", "B"))
@@ -42,5 +43,6 @@ reactor_grid <- plot_grid(p_plot, qpcr_plot, ncol=2, labels=c("A", "B"))
 amplicon_new_grid <- plot_grid(genus_heatmap, shannon_plot, ncol=1, labels=c("C", "D"))
 
 abigail_grid <- plot_grid(reactor_grid, amplicon_new_grid, ncol=1, rel_heights=c(1.3,2))
+abigail_grid
 
 ggsave("figures/abigail-reactor-grid.png", abigail_grid, width=25, height=20, units=c("cm"))

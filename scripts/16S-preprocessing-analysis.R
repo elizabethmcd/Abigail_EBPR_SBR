@@ -122,7 +122,7 @@ genus_heatmap
 acc_ASVs_heatmap
 
 # shannon diversity 
-shannon_plot <- plot_richness(ps2, x="operation_day", measure="Shannon") + scale_x_continuous(expand=c(0,0), limits=c(0,62), breaks=seq(0,62,2)) + ylab('Shannon\n Alpha Diversity\n') + theme_bw() + theme(axis.title.x=element_text(face="bold", size=7), axis.title.y=element_text(face="bold", size=7), strip.background=element_blank(), strip.text.x=element_blank(), plot.title=element_text(size=12, face="bold"), axis.text.x=element_text(size=6), axis.text.y=element_text(size=6))
+shannon_plot <- plot_richness(ps2, x="operation_day", measure="Shannon") + scale_x_continuous(expand=c(0,0), limits=c(0,62), breaks=seq(0,62,2)) + ylab('Shannon\n Alpha Diversity\n') + xlab("Operation Day") + theme_bw() + theme(axis.title.x=element_text(face="bold", size=7), axis.title.y=element_text(face="bold", size=7), strip.background=element_blank(), strip.text.x=element_blank(), plot.title=element_text(size=12, face="bold"), axis.text.x=element_text(size=8), axis.text.y=element_text(size=8))
 
 shannon_plot
 

@@ -51,10 +51,11 @@ bins_grid <- plot_grid(bar_plot, div_plot, ncol = 2, align="h", axis="b", labels
 bins_grid
 
 abigail_bins_grid <- ggarrange(bar_plot, div_plot, labels = c("A", "B"), common.legend=TRUE, legend = "bottom")
+abigail_bins_grid
 
 abigail_grid <- plot_grid(amplicon_grid, bins_grid, ncol=1)
 abigail_grid
 
-ggsave("figures/abigail-bins-div-grid.png", abigail_bins_grid, width=20, height=15, units=c("cm"))
+ggsave("figures/abigail-bins-div-grid.png", abigail_bins_grid, width=30, height=20, units=c("cm"))
 
 # combine with qPCR data and Accumulibacter ASVs
