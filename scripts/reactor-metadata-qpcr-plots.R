@@ -40,9 +40,9 @@ qpcr_plot
 # grid
 reactor_grid <- plot_grid(p_plot, qpcr_plot, ncol=2, labels=c("A", "B"))
 
-amplicon_new_grid <- plot_grid(genus_heatmap, shannon_plot, ncol=1, labels=c("C", "D"))
+amplicon_new_grid <- plot_grid(genus_heatmap, ncol=1, labels=c("C"))
 
-abigail_grid <- plot_grid(reactor_grid, amplicon_new_grid, ncol=1, rel_heights=c(1.3,2))
+abigail_grid <- plot_grid(reactor_grid, amplicon_new_grid, ncol=1, rel_widths=c(1.2,2))
 abigail_grid
 
-ggsave("figures/abigail-reactor-grid.png", abigail_grid, width=25, height=20, units=c("cm"))
+ggsave("figures/abigail-reactor-grid.png", abigail_grid, width=25, height=15, units=c("cm"))

@@ -110,15 +110,14 @@ ampvis2_obj <- phyloseq_to_ampvis2(ps2)
 accumulibacter_OTUs <- amp_subset_taxa(ampvis2_obj, tax_vector=c("Candidatus Accumulibacter"), normalise=TRUE)
 
 # plots of 16S dynamics over time-series and abundance
-genus_heatmap <- amp_heatmap(ampvis2_obj, tax_aggregate = "Genus", group_by="operation_day", tax_show=12, plot_values = FALSE, plot_colorscale = "sqrt", tax_add="Phylum", plot_legendbreaks=c(0,5,10,20, 30, 40)) + theme(axis.text.y=element_text(face=c("italic"), size=5), legend.position=c("right"), axis.text.x=element_text(angle=0), axis.ticks.x = element_blank()) + scale_x_discrete(position="bottom")
+genus_heatmap <- amp_heatmap(ampvis2_obj, tax_aggregate = "Genus", group_by="operation_day", tax_show=8, plot_values = FALSE, plot_colorscale = "sqrt", plot_legendbreaks=c(0,5,10,20, 30, 40)) + scale_y_discrete(labels=c("Actinobacteria; Tetrasphaera", "Firmicutes; Fusibacter", "Proteobacteria; Aquimonas", "Proteobacteria; Dechloromonas", "Proteobacteria; Zoogloea", "Actinobacteria; Ornithinibacter", "Bacteroidota; Flavobacterium", "Candidatus Accumulibacter")) + theme(axis.text.y=element_text(face=c("bold.italic"), size=8), legend.position=c("right"), axis.text.x=element_text(angle=0), axis.ticks.x = element_blank()) + scale_x_discrete(position="bottom")
 
 genus_heatmap
 
 genus_boxplot <- amp_boxplot(ampvis2_obj, tax_show = 12, tax_add="Phylum")
 
-acc_ASVs_heatmap <- amp_heatmap(accumulibacter_OTUs, tax_aggregate="OTU", tax_show=5, plot_values=FALSE, group_by="timepoint", plot_colorscale = "sqrt", normalise=FALSE, plot_legendbreaks=c(0,5,10,15,20,25))+ scale_y_discrete(labels=c("C. Accumulibacter ASV5", "C. Accumulibacter ASV4", "C. Accumulibacter ASV3", "C. Accumulibacter ASV2", "C. Accumulibacter ASV1")) + theme(axis.text.y = element_text(face="italic", size=8))
+acc_ASVs_heatmap <- amp_heatmap(accumulibacter_OTUs, tax_aggregate="OTU", tax_show=5, plot_values=FALSE, group_by="operation_day", plot_colorscale = "sqrt", normalise=FALSE, plot_legendbreaks=c(0,5,10,15,20,25))+ scale_y_discrete(labels=c("C. Accumulibacter ASV5", "C. Accumulibacter ASV4", "C. Accumulibacter ASV3", "C. Accumulibacter ASV2", "C. Accumulibacter ASV1")) + theme(axis.text.y=element_text(face=c("bold.italic"), size=8), legend.position=c("right"), axis.text.x=element_text(angle=0), axis.ticks.x = element_blank()) + scale_x_discrete(position="bottom")
 
-genus_heatmap
 acc_ASVs_heatmap
 
 # shannon diversity 
@@ -134,6 +133,11 @@ amplicon_grid <- plot_grid(genus_heatmap, shannon_plot, ncol = 1, align=c("v"), 
 
 amplicon_grid
 
+supplementary_amplicon_grid <- plot_grid(acc_ASVs_heatmap, shannon_plot, ncol=1, align=c("v"), axis="l", labels=c("A", "B"))
+
+supplementary_amplicon_grid
+
 ggsave("figures/Abigail-genus-heatmap.png", genus_heatmap, width=10, height=5, units=c("in"))
 ggsave("figures/Abigail-genus-boxplot.png", genus_boxplot, width=9, height=4, units=c("in"))
 ggsave("figures/Abigail-Acc-ASVs.png", acc_ASVs_heatmap, width=10, height=5, units=c("in"))
+ggsave("figures/amplicon_supplementary_grid.png", supplementary_amplicon_grid, width=25, height=15, units=c("cm"))
