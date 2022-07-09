@@ -110,7 +110,7 @@ ampvis2_obj <- phyloseq_to_ampvis2(ps2)
 accumulibacter_OTUs <- amp_subset_taxa(ampvis2_obj, tax_vector=c("Candidatus Accumulibacter"), normalise=TRUE)
 
 # plots of 16S dynamics over time-series and abundance
-genus_heatmap <- amp_heatmap(ampvis2_obj, tax_aggregate = "Genus", group_by="operation_day", tax_show=8, plot_values = FALSE, plot_colorscale = "sqrt", plot_legendbreaks=c(0,5,10,20, 30, 40)) + scale_y_discrete(labels=c("Actinobacteria; Tetrasphaera", "Firmicutes; Fusibacter", "Proteobacteria; Aquimonas", "Proteobacteria; Dechloromonas", "Proteobacteria; Zoogloea", "Actinobacteria; Ornithinibacter", "Bacteroidota; Flavobacterium", "Candidatus Accumulibacter")) + theme(axis.text.y=element_text(face=c("bold.italic"), size=8), legend.position=c("right"), axis.text.x=element_text(angle=0), axis.ticks.x = element_blank()) + scale_x_discrete(position="bottom")
+genus_heatmap <- amp_heatmap(ampvis2_obj, tax_aggregate = "Genus", group_by="operation_day", tax_show=8, plot_values = FALSE, plot_colorscale = "sqrt", plot_legendbreaks=c(0,5,10,20, 30, 40)) + scale_y_discrete(labels=c("Actinobacteria; Tetrasphaera", "Firmicutes; Fusibacter", "Proteobacteria; Aquimonas", "Proteobacteria; Dechloromonas", "Proteobacteria; Zoogloea", "Actinobacteria; Ornithinibacter", "Bacteroidota; Flavobacterium", "Candidatus Accumulibacter")) + xlab("\n Operation Day") + theme(axis.text.y=element_text(face=c("bold.italic"), size=8), legend.position=c("bottom"), axis.text.x=element_text(angle=0), axis.title.x=element_text(face=c("bold"), size=12), plot.margin = margin(.5,.5,.5,.5, "cm"))
 
 genus_heatmap
 
