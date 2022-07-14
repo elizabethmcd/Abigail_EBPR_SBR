@@ -46,7 +46,8 @@ div_plot <- div_metadata %>%
   theme_bw() +
   ylab("Nucleotide Diversity π") +
   xlab(expression(r ^2)) +
-  labs(color=c("Lineage")) 
+  labs(color=c("Lineage")) +
+  theme(legend.position="none")
 div_plot
 
 label1.1 <- data.frame(r2_mean=0.5, nucl_diversity=.0182, lab='Clade IC', sample = factor("Abigail-2021-03-17", levels=c("Abigail-2021-03-17", "Abigail-2021-04-03")))
@@ -59,15 +60,23 @@ div_plot_labels <- div_plot +
 div_plot_labels
 
 # Grid of 16S data, relative abundance, and diversity 
-bins_grid <- plot_grid(bar_plot, div_plot_labels, ncol = 2, align="h", axis="b", labels=c("A", "B"))
+bins_grid <- plot_grid(bar_plot, div_plot_labels, ncol = 1, align="v", axis="l", labels=c("D", "E"))
 bins_grid
 
-abigail_bins_grid <- ggarrange(bar_plot, div_plot_labels, labels = c("A", "B"), common.legend=TRUE, legend = "bottom")
+abigail_bins_grid <- ggarrange(bar_plot, div_plot, labels = c("D", "E"), common.legend=TRUE, legend = "bottom", ncol=1, heights=c(1.5,1))
 abigail_bins_grid
 
+abigail_bins_grid_v2 <- plot_grid(bar_plot, div_plot, labels=c("D", "E"), ncol=1, rel_heights = c(1.5,1))
+abigail_bins_grid_v2
+
 abigail_grid <- plot_grid(amplicon_grid, bins_grid, ncol=1)
-abigail_grid
+
 
 ggsave("figures/abigail-bins-div-grid.png", abigail_bins_grid, width=30, height=20, units=c("cm"))
 
 # combine with qPCR data and Accumulibacter ASVs
+abigail_combined_grid <- plot_grid(abigail_grid_v1, abigail_bins_grid, ncol=2, rel_widths = c(2,1))
+abigail_combined_grid
+
+
+ggsave("figures/Abigail_combined_grid.png", abigail_combined_grid, width=45, height=25, units=c("cm"))

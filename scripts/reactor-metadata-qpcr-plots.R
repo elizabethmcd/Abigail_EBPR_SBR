@@ -80,4 +80,8 @@ ggsave("figures/Abigail-metadata-grid.png", full_grid, width=35, height=25, unit
 
 
 abigail_grid_v1 <- plot_grid(sampling_chart, p_plot, genus_heatmap, ncol=1, labels=c("A", "B", "C"), rel_heights=c(.8,1.8,2.2), align=c("v"), axis="l")
+abigail_grid_v1
 ggsave("figures/Abigail-metadata-grid-v1.png", abigail_grid_v1, width=25, height=20, units=c("cm"))
+
+# grids with metagenome information as well 
+plot_grid(abigail_grid_v1, bins_grid, ncol=2)
