@@ -11,7 +11,7 @@ library(patchwork)
 library(cowplot)
 
 # before starting the dada2 workflow, samples must be demultiplexed, primers/adapters are removed, and the F and R files contain reads in matching order
-# this preprocessing script works through a time-series of samples from engineered bioreactors, amplified the 16S region using the V3-V4 primers/region, and was sequenced with the Illumina 2x300 chemistry (incorrectly, was supposed to be 2x250, but will be more to throw out)
+# this preprocessing script works through a time-series of samples from engineered bioreactors, amplified the 16S region using the V3-V4 primers/region, and was sequenced with the Illumina 2x300 chemistry
 # forward primer: CCTACGGGNGGCWGCAG
 # reverse primer: GACTACHVGGGTATCTAATCC
 # also check that all fastq files and databases aren't in the cloud, will need to pull them down
@@ -97,6 +97,24 @@ row.names(sample_metadata) <- sample_metadata$timepoint
 
 # phyloseq object with metadata
 ps2 <- phyloseq(otu_table(seqtab.nochim, taxa_are_rows=FALSE), sample_data(sample_metadata), tax_table(taxa))
+
+## export phyloseq object as dataframe for sharing in data repositories 
+  # store ASV name
+dna <- Biostrings::DNAStringSet(taxa_names(ps2))
+names(dna) <- taxa_names(ps2)
+ps2 <- merge_phyloseq(ps2, dna)
+taxa_names(ps2) <- paste0("ASV", seq(ntaxa(ps2)))
+  # otu table
+abigail_otu <- as(otu_table(ps2), "matrix")
+if(taxa_are_rows(ps2)){abigail_otu <- t(abigail_otu)}
+abigail_otu_df <- as.data.frame(abigail_otu)
+  # taxonomy table 
+abigail_tax <- as(tax_table(ps2), "matrix")
+if(taxa_are_rows(ps2)){abigail_tax <- t(abigail_tax)}
+abigail_tax_df <- as.data.frame(abigail_tax)
+  # write CSVs
+write.csv(abigail_otu_df, "results/Abigail-16S-otu-table.csv", row.names = FALSE, quote = FALSE)
+write.csv(abigail_tax_df, "results/Abigail-16S-tax-table.csv", row.names = FALSE, quote = FALSE)
 
 # prune phyloseq object for just Accumulibacter and plot ASVs 
 acc_ps <- subset_taxa(ps2, Genus=="Candidatus Accumulibacter")
