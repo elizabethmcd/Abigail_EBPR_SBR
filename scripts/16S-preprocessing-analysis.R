@@ -112,9 +112,10 @@ abigail_otu_df <- as.data.frame(abigail_otu)
 abigail_tax <- as(tax_table(ps2), "matrix")
 if(taxa_are_rows(ps2)){abigail_tax <- t(abigail_tax)}
 abigail_tax_df <- as.data.frame(abigail_tax)
+abigail_tax_df_names <- rownames_to_column(abigail_tax_df, var="ASV")
   # write CSVs
 write.csv(abigail_otu_df, "results/Abigail-16S-otu-table.csv", row.names = FALSE, quote = FALSE)
-write.csv(abigail_tax_df, "results/Abigail-16S-tax-table.csv", row.names = FALSE, quote = FALSE)
+write.csv(abigail_tax_df_names, "results/Abigail-16S-tax-table.csv", row.names = FALSE, quote = FALSE)
 
 # prune phyloseq object for just Accumulibacter and plot ASVs 
 acc_ps <- subset_taxa(ps2, Genus=="Candidatus Accumulibacter")
