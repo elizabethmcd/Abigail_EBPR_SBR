@@ -6,4 +6,4 @@ This reactor was named after [Dr. Abigail Salyers](https://en.wikipedia.org/wiki
 
 Raw data and results files including 16S OTU and taxonomy tables, qPCR results, sample extraction sheets, and chemical metadata are in the [Abigail Bioreactor Figshare Project Repository](https://figshare.com/projects/Abigail_EBPR_Bioreactor/149212)
 
-Raw sequencing files such as 16S rRNA amplicon sequencing fastq files, shotgun metagenomic sequencing fastq files, and non-redundant metagenome-assembled genome FASTAs are available on NCBI at the [Bioproject Accession PRJNAPRJNA881609](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA881609). 
+Raw sequencing files such as 16S rRNA amplicon sequencing fastq files, shotgun metagenomic sequencing fastq files, and non-redundant metagenome-assembled genome FASTAs are available on NCBI at the [Bioproject Accession PRJNA881609](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA881609). 
