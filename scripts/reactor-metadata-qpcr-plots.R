@@ -85,3 +85,6 @@ ggsave("figures/Abigail-metadata-grid-v1.png", abigail_grid_v1, width=25, height
 
 # grids with metagenome information as well 
 plot_grid(abigail_grid_v1, bins_grid, ncol=2)
+
+# save qPCR plot alone
+ggsave("figures/Abigail-ppk1-qPCR.png", qpcr_plot, width=20, height=15, units=c("cm"))
